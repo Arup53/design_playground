@@ -7,7 +7,7 @@ function App() {
     <div className="flex justify-center items-center h-screen w-full">
       <div className="wrapper">
         {new Array(LENGTH).fill(0).map((_, i) => (
-          <div className="card" key={i} />
+          <div className="card" key={i} style={{ "--index": LENGTH - 1 - i }} />
         ))}
       </div>
     </div>
