@@ -39,3 +39,26 @@
   transform: scale(calc(1 - var(--index) * var(--scale-increment)))
     translateY(calc(var(--index) * var(--translate-increment)));
 }
+
+/* --------------------------- 2.Transition Module ---------------------  */
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  border: 2px solid;
+  border-radius: 10px;
+  transition: transform 0.2s ease; /* Move transition here */
+}
+
+/* .box:hover {
+  transform: rotateY(180deg); This actually changes something 
+  transform: scale(2);
+} */
+
+/* .box:hover {
+  transform: scale3d(2, 2, 1); /* scale X and Y by 2, Z stays 1 
+} */
+
+.box:hover {
+  transform: scale(1.5);
+}
