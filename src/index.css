@@ -4,7 +4,8 @@
   display: grid;
 }
 
-.card {
+/* 1st method */
+/* .card {
   width: 356px;
   height: 74px;
   box-shadow: 0 4px 12px #0000001a;
@@ -12,4 +13,13 @@
   background: white;
   border-radius: 8px;
   grid-area: 1 / 1;
+  transform: scale(0.9) translateY(-26%);
 }
+
+.card:nth-child(2) {
+  transform: scale(0.95) translateY(-13%);
+}
+
+.card:nth-child(3) {
+  transform: scale(1) translateY(0);
+} */
