@@ -26,7 +26,7 @@
 
 /* 2nd method */
 
-.card {
+/* .card {
   width: 356px;
   height: 74px;
   box-shadow: 0 4px 12px #0000001a;
@@ -38,19 +38,19 @@
   --translate-increment: -13%;
   transform: scale(calc(1 - var(--index) * var(--scale-increment)))
     translateY(calc(var(--index) * var(--translate-increment)));
-}
+} */
 
 /* --------------------------- 2.Transition Module ---------------------  */
 
 /* example - 1 */
-.box {
+/* .box {
   width: 200px;
   height: 200px;
   background-color: yellow;
   border: 2px solid;
   border-radius: 10px;
   transition: transform 0.2s ease;
-}
+} */
 
 /* .box:hover {
   transform: rotateY(180deg); This actually changes something 
@@ -60,13 +60,13 @@
 /* .box:hover {
   transform: scale3d(2, 2, 1); /* scale X and Y by 2, Z stays 1 
 } */
-
+/* 
 .box:hover {
   transform: scale(1.5);
-}
+} */
 
 /* ---example 2 */
-
+/* 
 .circle-inner {
   height: 80px;
   width: 80px;
@@ -81,4 +81,57 @@
 
 .circle:hover .circle-inner {
   transform: translateY(-20%);
+} */
+
+/* example-3 */
+
+.card {
+  width: 340px;
+  height: 340px;
+  border-radius: 16px;
+  background: #fff;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  box-shadow: 0px 0px 0px 1px rgba(9, 9, 11, 0.08),
+    0px 1px 2px -1px rgba(9, 9, 11, 0.08), 0px 2px 4px 0px rgba(9, 9, 11, 0.04);
+  overflow: hidden;
+}
+
+.card:hover .card-description {
+  transform: translateY(0%);
+}
+
+.card-description {
+  --margin: 6px;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  position: relative;
+  background: #fafafa;
+  margin: 6px;
+  width: 100%;
+  padding: 10px 14px 13px;
+  font-size: 13px;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08),
+    0px 1px 2px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  transition: transform 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateY(calc(100% + var(--margin) + 1px));
+}
+
+.card-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.card-title {
+  color: #1b1b1d;
+  font-weight: 500;
+}
+
+.card-subtitle {
+  color: #717175;
+  line-height: 1;
+  margin-top: 4px;
 }
