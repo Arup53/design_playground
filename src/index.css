@@ -49,7 +49,7 @@
   background-color: yellow;
   border: 2px solid;
   border-radius: 10px;
-  transition: transform 0.2s ease; /* Move transition here */
+  transition: transform 0.2s ease;
 }
 
 /* .box:hover {
@@ -63,4 +63,22 @@
 
 .box:hover {
   transform: scale(1.5);
+}
+
+/* ---example 2 */
+
+.circle-inner {
+  height: 80px;
+  width: 80px;
+  background: yellowgreen;
+  border-radius: 100%;
+  transition: transform 200ms ease;
+}
+
+.circle {
+  border: 2px solid black;
+}
+
+.circle:hover .circle-inner {
+  transform: translateY(-20%);
 }
