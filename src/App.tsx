@@ -1,6 +1,7 @@
 import StackCards from "./components/1.stack_cards/stackCards";
 import FirstExample from "./components/2.Transition/FirstExample";
 import SecondExample from "./components/2.Transition/SecondExample";
+import ThirdExample from "./components/2.Transition/ThirdExample";
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       {/* <StackCards />
       <FirstExample />
       <></> */}
-      <SecondExample />
+      {/* <SecondExample /> */}
+      <ThirdExample />
     </div>
   );
 }
