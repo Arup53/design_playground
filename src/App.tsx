@@ -1,8 +1,8 @@
 import StackCards from "./components/1.stack_cards/stackCards";
-import FirstExample from "./components/2.Transition/FirstExample";
+import FirstExample from "./components/2.Transition/firstExample/FirstExample";
 import FourthExample from "./components/2.Transition/fourthExample/FourthExample";
-import SecondExample from "./components/2.Transition/SecondExample";
-import ThirdExample from "./components/2.Transition/ThirdExample";
+import SecondExample from "./components/2.Transition/secondExample/SecondExample";
+import ThirdExample from "./components/2.Transition/thirdExample/ThirdExample";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <></> */}
       {/* <SecondExample /> */}
       {/* <ThirdExample /> */}
-      <FourthExample />
+      {/* <FourthExample /> */}
     </div>
   );
 }
