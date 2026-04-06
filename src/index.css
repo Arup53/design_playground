@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-.wrapper {
+/* .wrapper {
   display: grid;
-}
+} */
 
 /* 1st method */
 /* .card {
@@ -85,7 +85,7 @@
 
 /* example-3 */
 
-.card {
+/* .card {
   width: 340px;
   height: 340px;
   border-radius: 16px;
@@ -134,4 +134,4 @@
   color: #717175;
   line-height: 1;
   margin-top: 4px;
-}
+} */
