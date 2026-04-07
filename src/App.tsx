@@ -5,6 +5,7 @@ import SecondExample from "./components/2.Transition/secondExample/SecondExample
 import ThirdExample from "./components/2.Transition/thirdExample/ThirdExample";
 import FirstExampleKeyFrame from "./components/3.keyframe/firstExample/FirstExampleKeyFrame";
 import SecondExampleKeyframe from "./components/3.keyframe/secondExample/SecondExampleKeyframe";
+import ThirdKeyframeExample from "./components/3.keyframe/ThirdExample/ThirdKeyframeExample";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       {/* <ThirdExample /> */}
       {/* <FourthExample /> */}
       {/* <FirstExampleKeyFrame /> */}
-      <SecondExampleKeyframe />
+      {/* <SecondExampleKeyframe /> */}
+      <ThirdKeyframeExample />
     </div>
   );
 }
