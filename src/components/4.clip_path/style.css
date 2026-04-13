@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  width: 100%;
+}
+
+.container img {
+  grid-area: 1 / 1;
+  width: 100%;
+  display: block;
+}
+
+.container .img1 {
+  clip-path: inset(0 50% 0 0);
+}
