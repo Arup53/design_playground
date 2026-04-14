@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./style.css";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 const Basic = () => {
   const [reRun, setReRun] = useState(1);
+  const [isVisible, setIsVisible] = useState(true);
   return (
     <div className="wrapper">
+      {/* spring vs easing */}
       <motion.div
         initial={{ x: -500 }}
         animate={{
@@ -22,6 +24,19 @@ const Basic = () => {
           transition: { duration: 2, ease: "easeOut" },
         }}
       />
+
+      {/* exit animation when a component is unmount from view */}
+      <AnimatePresence>
+        {isVisible ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsVisible((prevState) => !prevState)}
+            className="element cursor-pointer"
+          />
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 };
