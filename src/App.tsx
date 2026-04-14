@@ -1,4 +1,4 @@
-import ClipPath from "./components/4.clip_path/ClipPath";
+import Basic from "./components/framer_motion/basic/Basic";
 
 function App() {
   return (
@@ -12,7 +12,8 @@ function App() {
       {/* <FirstExampleKeyFrame /> */}
       {/* <SecondExampleKeyframe /> */}
       {/* <ThirdKeyframeExample /> */}
-      <ClipPath />
+      {/* <ClipPath /> */}
+      <Basic />
     </div>
   );
 }
