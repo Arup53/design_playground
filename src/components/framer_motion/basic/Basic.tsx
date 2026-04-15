@@ -3,7 +3,6 @@ import "./style.css";
 import { AnimatePresence, motion } from "motion/react";
 
 const Basic = () => {
-  const [reRun, setReRun] = useState(1);
   const [isVisible, setIsVisible] = useState(true);
   return (
     <div className="wrapper">
