@@ -1,3 +1,4 @@
+/* css for stacking one image to another one */
 .wrapper {
   display: grid;
   height: 100vh;
@@ -11,7 +12,7 @@
   background: #fad658;
   border-radius: 12px;
 }
-
+/*  */
 .button {
   background: white;
   padding: 8px 16px;
