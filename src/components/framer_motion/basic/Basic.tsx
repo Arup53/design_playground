@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import { AnimatePresence, motion } from "motion/react";
 import { CheckCheckIcon, CopyIcon } from "lucide-react";
+import SmoothButton from "./ButtonWithSpinner";
 
 const Basic = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -49,7 +50,7 @@ const Basic = () => {
 
       {/* 3.exitanimation example: before and after copy button exit animation */}
 
-      <button
+      {/* <button
         className="cursor-pointer border border-gray-300 rounded-md h-[32px] w-[32px] flex justify-center items-center p-[6px]"
         aria-label="Copy code snippet"
         onClick={() => setCopied(true)}
@@ -77,7 +78,9 @@ const Basic = () => {
             </motion.span>
           )}
         </AnimatePresence>
-      </button>
+      </button> */}
+      {/*  */}
+      <SmoothButton />
     </div>
   );
 };
