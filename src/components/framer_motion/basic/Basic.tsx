@@ -79,7 +79,7 @@ const Basic = () => {
           )}
         </AnimatePresence>
       </button> */}
-      {/*  */}
+      {/* button with three different states  */}
       <SmoothButton />
     </div>
   );
