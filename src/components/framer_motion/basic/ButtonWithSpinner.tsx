@@ -6,7 +6,7 @@ import "./style.css";
 const buttonCopy = {
   idle: "Send me a login link",
   loading: <Spinner size={16} color="rgba(255, 255, 255, 0.65)" />,
-  success: "Login link sent!",
+  success: "Login link sent check mail!",
 };
 
 export default function SmoothButton() {
