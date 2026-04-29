@@ -1,30 +1,29 @@
 import { motion } from "motion/react";
 import { useState, useRef, useEffect } from "react";
-import "./styles.css";
+import useMeasure from "react-use-measure";
+import "./stylesAutoHeightAnimation.css";
 
-export const AutoHeightAnimator = () => {
+export default function Example() {
   const [showExtraContent, setShowExtraContent] = useState(false);
+  const [elementRef, bounds] = useMeasure();
 
   return (
     <div className="wrapper">
       <button className="button" onClick={() => setShowExtraContent((b) => !b)}>
         Toggle height
       </button>
-      <div className="element">
-        <div className="inner">
+      <motion.div animate={{ height: bounds.height }} className="element">
+        <div ref={elementRef} className="inner">
           <h1>Fake Family Drawer</h1>
           <p>
             This is a fake family drawer. Animating height is tricky, but
             satisfying when it works.
           </p>
           {showExtraContent ? (
-            <p>
-              This extra content will change the height of the drawer. Some even
-              more content to make the drawer taller and taller and taller...
-            </p>
+            <p>This extra content will change the height of the drawer.</p>
           ) : null}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
-};
+}
