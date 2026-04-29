@@ -1,4 +1,4 @@
-import Basic from "./components/framer_motion/basic/Basic";
+import Example from "./components/framer_motion/basic/autoHeightComponent/AutoHeightAnimator";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       {/* <SecondExampleKeyframe /> */}
       {/* <ThirdKeyframeExample /> */}
       {/* <ClipPath /> */}
-      <Basic />
+      <Example />
     </div>
   );
 }
