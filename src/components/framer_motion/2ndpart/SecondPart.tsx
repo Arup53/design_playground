@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState, useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 import "./styles.css";
@@ -62,55 +62,162 @@ const SecondPart = () => {
 
   return (
     // before applying tranisition through layout animations
+    // <>
+    //   {activeGame ? (
+    //     <>
+    //       <div className="overlay" />
+    //       <div className="active-game">
+    //         <div className="inner" ref={ref} style={{ borderRadius: 12 }}>
+    //           <div className="header">
+    //             <img
+    //               height={56}
+    //               width={56}
+    //               alt=""
+    //               src={activeGame.image}
+    //               style={{ borderRadius: 12 }}
+    //             />
+    //             <div className="header-inner">
+    //               <div className="content-wrapper">
+    //                 <h2 className="game-title">{activeGame.title}</h2>
+    //                 <p className="game-description">{activeGame.description}</p>
+    //               </div>
+    //               <button className="button">Get</button>
+    //             </div>
+    //           </div>
+    //           <p className="long-description">{activeGame.longDescription}</p>
+    //         </div>
+    //       </div>
+    //     </>
+    //   ) : null}
+    //   <ul className="list">
+    //     {GAMES.map((game) => (
+    //       <li
+    //         key={game.title}
+    //         onClick={() => setActiveGame(game)}
+    //         style={{ borderRadius: 8 }}
+    //       >
+    //         <img
+    //           height={56}
+    //           width={56}
+    //           alt=""
+    //           src={game.image}
+    //           style={{ borderRadius: 12 }}
+    //         />
+    //         <div className="game-wrapper">
+    //           <div className="content-wrapper">
+    //             <h2 className="game-title">{game.title}</h2>
+    //             <p className="game-description">{game.description}</p>
+    //           </div>
+    //           <button className="button">Get</button>
+    //         </div>
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </>
+    // after layout animations
     <>
-      {activeGame ? (
-        <>
-          <div className="overlay" />
+      <AnimatePresence>
+        {activeGame ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="overlay"
+          />
+        ) : null}
+      </AnimatePresence>
+      <AnimatePresence>
+        {activeGame ? (
           <div className="active-game">
-            <div className="inner" ref={ref} style={{ borderRadius: 12 }}>
+            <motion.div
+              layoutId={`card-${activeGame.title}`}
+              className="inner"
+              style={{ borderRadius: 12 }}
+            >
               <div className="header">
-                <img
+                <motion.img
+                  layoutId={`image-${activeGame.title}`}
                   height={56}
                   width={56}
-                  alt=""
+                  alt="Game"
                   src={activeGame.image}
                   style={{ borderRadius: 12 }}
                 />
                 <div className="header-inner">
                   <div className="content-wrapper">
-                    <h2 className="game-title">{activeGame.title}</h2>
-                    <p className="game-description">{activeGame.description}</p>
+                    <motion.h2
+                      layoutId={`title-${activeGame.title}`}
+                      className="game-title"
+                    >
+                      {activeGame.title}
+                    </motion.h2>
+                    <motion.p
+                      layoutId={`description-${activeGame.title}`}
+                      className="game-description"
+                    >
+                      {activeGame.description}
+                    </motion.p>
                   </div>
-                  <button className="button">Get</button>
+                  <motion.button
+                    layoutId={`button-${activeGame.title}`}
+                    className="button"
+                  >
+                    Get
+                  </motion.button>
                 </div>
               </div>
-              <p className="long-description">{activeGame.longDescription}</p>
-            </div>
+              <motion.p
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, transition: { duration: 0.05 } }}
+                className="long-description"
+              >
+                {activeGame.longDescription}
+              </motion.p>
+            </motion.div>
           </div>
-        </>
-      ) : null}
+        ) : null}
+      </AnimatePresence>
       <ul className="list">
         {GAMES.map((game) => (
-          <li
+          <motion.li
+            layoutId={`card-${game.title}`}
             key={game.title}
             onClick={() => setActiveGame(game)}
             style={{ borderRadius: 8 }}
           >
-            <img
+            <motion.img
+              layoutId={`image-${game.title}`}
               height={56}
               width={56}
-              alt=""
+              alt="Game"
               src={game.image}
               style={{ borderRadius: 12 }}
             />
             <div className="game-wrapper">
               <div className="content-wrapper">
-                <h2 className="game-title">{game.title}</h2>
-                <p className="game-description">{game.description}</p>
+                <motion.h2
+                  layoutId={`title-${game.title}`}
+                  className="game-title"
+                >
+                  {game.title}
+                </motion.h2>
+                <motion.p
+                  layoutId={`description-${game.title}`}
+                  className="game-description"
+                >
+                  {game.description}
+                </motion.p>
               </div>
-              <button className="button">Get</button>
+              <motion.button
+                layoutId={`button-${game.title}`}
+                className="button"
+              >
+                Get
+              </motion.button>
             </div>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </>
